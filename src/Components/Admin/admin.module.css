@@ -1,0 +1,138 @@
+/* ========= General Page Layout ========= */
+.pageWrapper {
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pageTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+/* ========= Table Wrapper ========= */
+.tableWrapper {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ========= Responsive Fix ========= */
+@media (max-width: 768px) {
+  .tableWrapper {
+    overflow-x: auto;
+  }
+
+  :global(.ant-table) {
+    min-width: 650px; /* Force scroll on small devices */
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+/* ========= Buttons ========= */
+:global(.ant-btn) {
+  border-radius: 8px !important;
+  font-size: 14px;
+  padding: 6px 14px;
+  transition: all 0.3s ease;
+}
+
+:global(.ant-btn:hover) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ========= Delete Button ========= */
+:global(.ant-btn-dangerous) {
+  background: #ff4d4f !important;
+  border-color: #ff4d4f !important;
+  color: #fff !important;
+}
+
+:global(.ant-btn-dangerous:hover) {
+  background: #d9363e !important;
+  border-color: #d9363e !important;
+}
+
+/* ========= Tags ========= */
+:global(.ant-tag) {
+  font-size: 13px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Active Tag */
+:global(.ant-tag-green) {
+  background-color: #f6ffed !important;
+  color: #389e0d !important;
+  border: 1px solid #b7eb8f !important;
+}
+
+/* Inactive Tag */
+:global(.ant-tag-volcano) {
+  background-color: #fff2e8 !important;
+  color: #d4380d !important;
+  border: 1px solid #ffbb96 !important;
+}
+
+/* ========= Table Customization ========= */
+:global(.ant-table-thead > tr > th) {
+  background: #fafafa !important;
+  font-weight: 600 !important;
+  font-size: 14px;
+  color: #555;
+}
+
+:global(.ant-table-tbody > tr > td) {
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+/* Zebra Striping for Rows */
+:global(.ant-table-tbody > tr:nth-child(odd) > td) {
+  background-color: #fcfcfc;
+}
+
+/* Hover Effect */
+:global(.ant-table-tbody > tr:hover > td) {
+  background-color: #f0f7ff !important;
+}
+
+/* ========= Mobile Friendly ========= */
+@media (max-width: 480px) {
+  .pageWrapper {
+    padding: 10px;
+  }
+
+  .tableWrapper {
+    padding: 5px;
+  }
+
+  :global(.ant-btn) {
+    width: 100%; /* Full width buttons on mobile */
+    margin-bottom: 8px;
+  }
+
+  :global(.ant-space) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+/* ----------------
+
+*/
