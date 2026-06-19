@@ -1,0 +1,229 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+
+.form {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.form :global(.ant-form-item-label > label) {
+  font-weight: 600;
+  color: #333;
+}
+
+
+.form :global(.ant-input),
+.form :global(.ant-input-password) {
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+
+.form :global(.ant-btn) {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  font-weight: 600;
+}
+
+
+.form :global(.ant-checkbox-wrapper) {
+  font-size: 14px;
+  color: #444;
+}
+
+
+@media (max-width: 768px) {
+  .form {
+    padding: 25px 20px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 20px 15px;
+  }
+
+  .form :global(.ant-btn) {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .form :global(.ant-input),
+  .form :global(.ant-input-password) {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
+
+/* ------------------------------navbar.module.css------------------------------ */
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* Auth buttons */
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn.primary {
+  background: #1677ff;
+  border-color: #1677ff;
+}
+
+.btn.primary:hover {
+  background: #0f5fd4;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links,
+  .auth-buttons {
+    display: none;
+    flex-direction: column;
+    background: #243b55;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .nav-links.show,
+  .auth-buttons.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+/* Loader Overlay */
+.loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #e58484d9;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  font-family: 'Pacifico', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  text-decoration: wavy;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: #ed5923;
+}

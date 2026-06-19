@@ -1,0 +1,205 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+/* Grid layout */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product card */
+.productCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Product images */
+.images {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.mainImage {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover .mainImage {
+  transform: scale(1.03);
+}
+
+/* Placeholder for missing images */
+.placeholder {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #e3e3e3, #f7f7f7);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Thumbnails */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: border 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  border: 2px solid #888;
+  transform: scale(1.05);
+}
+
+.activeThumbnail {
+  border: 2px solid #007bff;
+}
+
+/* Text */
+.productCard h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.productCard p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.price {
+  font-weight: bold;
+  color: #111;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Button */
+.detailsBtn {
+  background: #f74808;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.detailsBtn:hover {
+  background: #bb0000;
+  transform: translateY(-2px);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .productCard {
+    background: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+  }
+
+  .productCard h3,
+  .productCard p,
+  .price,
+  .sectionTitle {
+    color: #f0f0f0;
+  }
+
+  .placeholder {
+    background: linear-gradient(135deg, #333, #555);
+    color: #ccc;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainImage,
+  .placeholder {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mainImage,
+  .placeholder {
+    max-height: 160px;
+  }
+
+  .detailsBtn {
+    width: 100%;
+  }
+}
+/* Loader Overlay */
+.loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
